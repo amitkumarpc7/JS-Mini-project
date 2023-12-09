@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color:#e056fd;
+}
+.container{
+    text-align: center;
+    background-color: white;
+
+}
+main{
+    height: 500px;
+    width: 800px;
+    border: 2px solid black;
+}
+main img{
+    height: 150px;
+}
+.card{
+    margin-top: 20px;
+}
+li{
+    list-style: none;
+}
