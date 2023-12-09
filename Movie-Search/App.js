@@ -4,6 +4,20 @@ const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 const movieBox=document.querySelector("#movie-box")
 
+const body=document.body;
+const toggle=document.getElementById("theme-switch");
+
+let isDarkMode=true;
+
+toggle.addEventListener('click',function(){
+    isDarkMode=!isDarkMode;
+    updateTheme();
+});
+
+
+
+
+
 const getMovies=async(api)=>{
     const response=await fetch(api)
     const data=await response.json();
@@ -36,6 +50,27 @@ const showMovies=(data)=>{
         }
     )
 }
+// const toggle=document.getElementById("toggle-switch"); 
+// const body=document.body;
+// toggle.addEventListener('click',function(){
+//     body.style.background='white';
+//     body.style.color='black';
+    
+
+    
+// })
+
+const updateTheme=()=>{
+    if(isDarkMode){
+        body.style.background='#333';
+        body.style.color='#fff';
+    }
+    else{
+        body.style.background='#fff';
+        body.style.color='#333';
+    }
+}
+
 
 document.querySelector("#search").addEventListener("keyup",function(event){
     if(event.target.value!=""){
@@ -47,4 +82,5 @@ document.querySelector("#search").addEventListener("keyup",function(event){
 
 
 })
+updateTheme();
 getMovies(APIURL);

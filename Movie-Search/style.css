@@ -6,10 +6,12 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: black;
+}
 .main {
     width: 100%;
     min-height: 100vh;
-    background-color: black;
 }
 
 .row {
@@ -83,6 +85,10 @@
     border-radius: 25px;
     transition: 1s;
     margin-bottom: 15px;
+}
+
+#theme-switch{
+    margin-left: 20px;
 }
 
 #search:focus {
