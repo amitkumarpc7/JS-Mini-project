@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Delay</title>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Enter num of times" id="nT">  
+    </div>
+    
+    <input type="button" onclick="dispT()" value="Click here" >
+    <div class="display">
+    </div>
+    <script>
+        function getTime(){
+            const now=new Date();
+            console.log(now);
+            const hours=now.getHours();
+            // console.log(hours);
+            const min=now.getMinutes();
+            // console.log(min);
+            const sec=now.getSeconds();
+            // console.log(sec);
+
+            // const am_pm="AM";
+            // if(hours>12){
+            //     am_pm="PM";
+            //     hours=hours-12;
+            // }
+            const para=document.createElement("p");
+            para.innerText=`${hours}:${min}:${sec}:${am_pm}`;
+
+            const display=document.querySelector(".display");
+            // console.log(display);
+            display.appendChild(para);
+
+        }
+        function dispT(){
+            let rep=Number(document.getElementById("nT").value);
+            let id=setInterval(()=>{
+                if(rep<=0){
+                    clearInterval(id);
+                    return;
+                }
+                getTime();
+                rep--;
+            },1000);
+        }
+    </script>
+
+</body>
+</html>
